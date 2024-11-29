@@ -33,7 +33,7 @@ const Layout: FC<ILayout> = ({ children, title }) => {
 
         <Script
             strategy="beforeInteractive"
-            src={`https://maps.googleapis.com/map/api/js/key=${process.env.MAP_KEY}&libraries=places`}
+            src={`https://maps.googleapis.com/map/api/js/key=${process.env.NEXT_PUBLIC_MAP_KEY}&libraries=places`}
         />
 
         <div style={{maxWidth: 480}} className="mx-auto relative overflow-hidden">
