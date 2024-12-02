@@ -20,6 +20,8 @@ function Map() {
     const containerStyle = {
         width: "100%",
         height: "100vh",
+        // position: "absolute",
+        zindex: "0",
     };
 
     const center = {
@@ -28,18 +30,23 @@ function Map() {
     };
 
     return (
-        <div className="h-screen w-full">
-            <LoadScript googleMapsApiKey={String(process.env.NEXT_PUBLIC_MAP_KEY)}>
-                <GoogleMap 
-                mapContainerStyle={containerStyle} 
-                center={center} 
-                zoom={12}>
-
-                </GoogleMap>
-            </LoadScript>
-
+        <div className="h-1/2 w-full">
+            {/* <LoadScript googleMapsApiKey={String(process.env.NEXT_PUBLIC_MAP_KEY)} libraries={['places']}> */}
+            <GoogleMap
+                mapContainerStyle={containerStyle}
+                center={center}
+                zoom={13}
+                options={{
+                    zoomControl: false,
+                    keyboardShortcuts: false,
+                    streetViewControl: false,
+                    fullscreenControl: false,
+                }}
+            />
+            {/* </LoadScript> */}
         </div>
     );
 }
+// console.log(google.maps.MapOptions);
 
 export default Map;
