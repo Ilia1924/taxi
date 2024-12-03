@@ -1,12 +1,12 @@
 'use client'
-import React from 'react'
+import React from 'react';
 import InputPlaces from '../../ui/InputPlaces';
 import { Coords } from 'google-map-react';
 import { useActions } from '@/app/hooks/useActions';
 
 function ToInput() {
 
-    const { setTo } = useActions()
+    const { setTo } = useActions();
 
     const cbSuccess = (selectedAddress: string, location: Coords) => {
         setTo({ location, description: selectedAddress });

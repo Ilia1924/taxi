@@ -1,10 +1,10 @@
-"use client"
-import React, { FC, useEffect, useRef, useState } from 'react'
-import { FiSearch } from 'react-icons/fi'
-import PlacesAutocomplete, { geocodeByAddress, getLatLng } from 'react-places-autocomplete'
-import cn from 'classnames'
-import { Coords } from 'google-map-react'
-import { useTypedSelector } from '@/app/hooks/useTypedSelector'
+'use client'
+import React, { FC, useEffect, useRef, useState } from 'react';
+import { FiSearch } from 'react-icons/fi';
+import PlacesAutocomplete, { geocodeByAddress, getLatLng } from 'react-places-autocomplete';
+import cn from 'classnames';
+import { Coords } from 'google-map-react';
+import { useTypedSelector } from '@/app/hooks/useTypedSelector';
 
 interface IInputPlaces {
     cbSuccess: (selectedAddress: string, location: Coords) => void
@@ -16,7 +16,6 @@ const InputPlaces: FC<IInputPlaces> = ({ cbSuccess, type }) => {
     const inputRef = useRef<HTMLInputElement>(null);
 
     const setFocus = () => inputRef?.current?.focus();
-
     const isFrom = type === 'from';
 
     useEffect(() => {
@@ -58,7 +57,7 @@ const InputPlaces: FC<IInputPlaces> = ({ cbSuccess, type }) => {
                         })}
                         />
                         {!isFrom && (
-                            <div className='absolute right-5 text-sm text-gray-800'> {travelTime? `${travelTime}-min. (${Math.ceil(travelTime/60)}h.)` : '-min.'}</div>
+                            <div className='absolute right-5 text-sm text-gray-800'> {travelTime ? `${travelTime}-min. (${Math.ceil(travelTime / 60)}h.)` : '-min.'}</div>
                         )}
                     </div>
                     <div className={cn('absolute w-full h-0 overflow-y-auto rounded-b-lg z-10', { 'h-48': suggestions.length || loading })}>

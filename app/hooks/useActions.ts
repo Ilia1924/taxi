@@ -1,5 +1,5 @@
 import { bindActionCreators } from "@reduxjs/toolkit";
-import { useDispatch } from "react-redux"
+import { useDispatch } from "react-redux";
 import { taxiSlice } from "../store/slice";
 
 export const useActions = () =>{

@@ -1,10 +1,10 @@
-import React from 'react'
-import Layout from '../../layout/Layout'
-import Map from './Map'
-import FromInput from './FromInput'
-import ToInput from './ToInput'
-import Options from './Options'
-import OrderButton from './OrderButton'
+import React from 'react';
+import Layout from '../../layout/Layout';
+import Map from './Map';
+import FromInput from './FromInput';
+import ToInput from './ToInput';
+import Options from './Options';
+import OrderButton from './OrderButton';
 
 const Home = () => {
     return (

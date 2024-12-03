@@ -16,36 +16,30 @@ export const optionList: IList[] = [
         id: 'econom-1',
         title: "Economy",
         img: economyIcon.src,
-        multiplier: 90
+        multiplier: 12
     }, 
     {
         id: 'comfort-1',
         title: "Comfort",
         img: comfortIcon.src,
-        multiplier: 60
+        multiplier: 20
     }, 
     {
         id: 'bus-1',
         title: "Bus",
         img: busIcon.src,
-        multiplier: 40
+        multiplier: 32
     }, 
     {
         id: 'partybus-1',
         title: "Party Bus",
         img: partyBusIcon.src,
-        multiplier: 60
+        multiplier: 41
     }, 
     {
         id: 'limusin-1',
         title: "LUX",
         img: limusinIcon.src,
         multiplier: 140
-    }, 
-    // {
-    //     id: 'econom-1',
-    //     title: "Economy",
-    //     img: economyIcon.src,
-    //     multiplier: 90
-    // }, 
+    }
 ]

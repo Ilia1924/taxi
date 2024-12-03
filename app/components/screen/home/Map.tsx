@@ -14,41 +14,39 @@ interface IMapStore {
 function Map() {
 
     const [mapStore, setMapStore] = useState<IMapStore>({} as IMapStore);
-
     const [isExistRoute, setIsExistRoute] = useState(false);
     const { from, to } = useTypedSelector(state => state.taxi);
     const { setTravelTime, setSelectedOption } = useActions();
 
-
     const renderRoad = () => {
         const { map, maps } = mapStore;
+
         if (typeof maps.DirectionsRenderer === 'function') {
 
             const directionsRenderer: google.maps.DirectionsRenderer = new maps.DirectionsRenderer();
             const directionService: google.maps.DirectionsService = new maps.DirectionsService();
 
-            directionService.route({
-                origin: from.location,
-                destination: to.location,
-                travelMode: google.maps.TravelMode.DRIVING,
-            }).then(res => {
-                directionsRenderer.setDirections(res);
+            directionService.route(
+                {
+                    origin: from.location,
+                    destination: to.location,
+                    travelMode: google.maps.TravelMode.DRIVING,
+                }).then(res => {
+                    directionsRenderer.setDirections(res);
 
-                const dutationSec = res.routes[0].legs[0].duration?.value;
+                    const dutationSec = res.routes[0].legs[0].duration?.value;
 
-                if (dutationSec) {
-                    setTravelTime(Math.ceil(dutationSec / 60));
-                    console.log(optionList[0].id);
-
-                    setSelectedOption(optionList[0].id);
-                }
-            }).catch(err => alert(err));
+                    if (dutationSec) {
+                        setTravelTime(Math.ceil(dutationSec / 60));
+                        setSelectedOption(optionList[0].id);
+                    }
+                }).catch(err => alert(err));
 
             directionsRenderer.setOptions({
                 markerOptions: {
                     clickable: false
                 }
-            })
+            });
 
             directionsRenderer.setMap(map)
         }
@@ -95,4 +93,4 @@ function Map() {
     );
 }
 
-export default Map;
+export default Map

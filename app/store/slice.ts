@@ -13,19 +13,19 @@ export const taxiSlice = createSlice({
     initialState,
     reducers: {
         setFrom: (state, action) => {
-            state.from = action.payload
+            state.from = action.payload;
         },
 
         setTo: (state, action) => {
-            state.to = action.payload
+            state.to = action.payload;
         },
 
         setTravelTime: (state, action) => {
-            state.travelTime = action.payload
+            state.travelTime = action.payload;
         },
 
         setSelectedOption: (state, action) => {
-            state.selectedOption = action.payload
+            state.selectedOption = action.payload;
         }
     }
 })
