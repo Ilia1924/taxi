@@ -25,8 +25,6 @@ export const taxiSlice = createSlice({
         },
 
         setSelectedOption: (state, action) => {
-            console.log('state change', state, action);
-
             state.selectedOption = action.payload
         }
     }
